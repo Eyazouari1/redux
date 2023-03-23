@@ -14,6 +14,7 @@ const CardList = ({task}) => {
     <div ><button onClick={()=>dispatch(handleComplete(task.id))} className='comp' ><BiCheckSquare/></button></div>
     <Edit  test={task}/>
     </div>
+   
     </div>
   )
 }

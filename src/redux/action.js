@@ -1,4 +1,4 @@
-import { ADD, COMPLETE, DELETE, EDIT } from "./actionTypes"
+import { ADD, COMPLETE, DELETE, EDIT, FILTER } from "./actionTypes"
 
 
 export const handleAdd=(newTask)=>{
@@ -23,5 +23,11 @@ export const handleEdite=(editeTask)=>{
     return{
         type:EDIT,
         payload:editeTask,
+    }
+}
+export const handleFilter=(task)=>{
+    return{
+        type:FILTER,
+        payload:task,
     }
 }

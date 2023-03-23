@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux'
 import CardList from './CardList'
 
 const List = () => {
-    const {todos}=useSelector(state=>state)
+    const {todos,filter}=useSelector(state=>state)
   return (
     <div>
-{
-    todos.map(el=><CardList task={el}/>)
-
-}
+ {filter
+        ? todos
+            .filter((el) => el.isDone === false)
+            .map((el) => <CardList key={el.id} task={el} />)
+        : todos.map((el) => <CardList key={el.id} task={el} />)}
     </div>
   )
 }
